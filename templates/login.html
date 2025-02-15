@@ -47,6 +47,10 @@ input[type="submit"]:hover {
   border-radius: 7px;
 }
 
+#error {
+    color: red;
+}
+
 #horizon
     {
     color: white;
@@ -108,9 +112,9 @@ input[type="submit"]:hover {
     <div id="content">
         <div class="bodytext">
             <span class="headline">Вход</span>
-            <form action="/" method="POST">
+            <form action="/login" method="POST">
                 <p>
-	                <label>Имя пользователя</label> <input type="text" name="username">
+	                <label>Логин</label> <input type="text" name="username">
 	            </p>
 	            <p>
 	                <label>Пароль</label> <input type="password" name="password">
@@ -119,6 +123,7 @@ input[type="submit"]:hover {
 	                <input type="submit" value="Войти">
 	            </p>
                 </form>
+            <br><div id="error">{{ err_ret }}</div>
         </div>
     </div>
 </div>

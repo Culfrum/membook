@@ -1,9 +1,9 @@
 <html>
-<head>  
+<head>
 <meta charset="UTF-8">
-<title>Вход в систему</title>
+<title>Меню</title>
 <style type="text/css" media="screen"><!--
-body 
+body
     {
     color: white;
     background-color: #003;
@@ -45,6 +45,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   border-radius: 7px;
+}
+
+#error {
+    color: red;
 }
 
 #horizon
@@ -99,7 +103,7 @@ input[type="submit"]:hover {
     visibility: visible;
     display: block
     }
-}
+
 
 --></style>
 </head>
@@ -107,18 +111,7 @@ input[type="submit"]:hover {
 <div id="horizon">
     <div id="content">
         <div class="bodytext">
-            <span class="headline">Регистрация</span>
-            <form action="/register" method="POST">
-                <p>
-	                <label>Имя пользователя</label> <input type="text" name="username">
-	            </p>
-	            <p>
-	                <label>Пароль</label> <input type="password" name="password">
-	            </p>
-	            <p>
-	                <input type="submit" value="Регистрация">
-	            </p>
-                </form>
+            <span class="headline">Вы пользователь</span>
         </div>
     </div>
 </div>
