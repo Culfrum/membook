@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список погибших в вооружённых конфликтах</title>
+    <style type="text/css" media="screen">
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 50px;
+    background-color: #003;
+    color: #e6dfdf;
+    font-family: "Roboto", sans-serif;
+}
+
+table {
+    width: 650px;
+    border-top: 7px solid #191970;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+}
+
+td {
+    text-align: left;
+	padding: 10px;
+	border: 3px solid #191970;
+}
+th {
+    text-align: center;
+    padding: 10px;
+    border: 3px solid #191970;
+}
+a:link {
+    color: blue;
+}
+a:visited {
+    color: blue;
+}
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td><a href="https://www.example.com">ID</a></td>
+        <td>ФИО</td>
+        <td>Район</td>
+        <td>Годы жизни</td>
+        <td>Место службы</td>
+    </tr>
+    {% for item in tab %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
