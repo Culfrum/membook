@@ -1,19 +1,46 @@
 <html>
-<head>  
+<head>
 <meta charset="UTF-8">
-<title>Вход в систему</title>
+<title>Список погибших в вооружённых конфликтах</title>
 <style type="text/css" media="screen"><!--
-body 
+body
     {
     color: white;
     background-color: #003;
     margin: 0px
     }
 
+
+table {
+    width: 1450px;
+    border-top: 7px solid #191970;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+}
+
+td {
+    text-align: left;
+	padding: 10px;
+	border: 3px solid #191970;
+}
+th {
+    text-align: center;
+    padding: 10px;
+    border: 3px solid #191970;
+}
+a:link {
+    color: blue;
+}
+a:visited {
+    color: blue;
+}
+
 input[type="submit"] {
   padding: 10px 15px;
   border: solid;
-  border-color: #000080;
+  border-color: #191970;
   font-family: Lucida console;
   border-radius: 4px;
   background-image: linear-gradient(to right, #57a0ee, #355f7c);
@@ -25,7 +52,7 @@ input[type="submit"]:hover {
   border-radius: 7px;
 }
 
-#horizon        
+#horizon
     {
     color: white;
     background-color: transparent;
@@ -44,27 +71,27 @@ input[type="submit"]:hover {
     {
     font-family: Verdana, Geneva, Arial, sans-serif;
     background-color: transparent;
-    margin-left: -300px;
+    margin-left: -750px;
     position: absolute;
     top: -35px;
     left: 50%;
-    width: 550px;
+    width: 1550px;
     height: 70px;
     visibility: visible
     }
 
-.bodytext 
+.bodytext
     {
     font-size: 14px
     }
 
-.headline 
+.headline
     {
     font-weight: bold;
     font-size: 24px
     }
 
-#footer 
+#footer
     {
     font-size: 20px;
     font-family: Calibri;
@@ -77,29 +104,35 @@ input[type="submit"]:hover {
     visibility: visible;
     display: block
     }
-}
-
 --></style>
 </head>
 <body>
-<div id="horizon">
-    <div id="content">
+    <div id="horizon">
+        <div id="content">
         <div class="bodytext">
-            <span class="headline">Добро пожаловать!</span>
-            <form action="/login" method="GET">
+            <form action="/" method="GET">
                 <p>
-	                <input type="submit" value="Войти">
+	                <input type="submit" value="Главная страница">
 	            </p>
             </form>
-            <form action="/list" method="GET">
-                <p>
-	                <input type="submit" value="Список">
-	            </p>
-            </form>
+            <span class="headline">Заявки</span>
+            <p>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Заявка</td>
+                    <td>Тип</td>
+                </tr>
+                {% for item in tab %}
+                    <tr>
+                        <td>{{item[0]}}</td>
+                        <td>{{item[1]}}</td>
+                        <td>{{item[2]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </div>
-<div id="footer">
-    <a>Электронная книга памяти Оренбургской области</a></div>
 </body>
 </html>

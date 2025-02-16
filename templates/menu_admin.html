@@ -111,7 +111,32 @@ input[type="submit"]:hover {
 <div id="horizon">
     <div id="content">
         <div class="bodytext">
-            <span class="headline">Вы администратор</span>
+            <span class="headline">Меню</span>
+            <form action="/requests/new" method="GET">
+                <p>
+	                <input type="submit" value="Новый запрос">
+	            </p>
+            </form>
+            <form action="/requests/remove" method="GET">
+                <p>
+	                <input type="submit" value="Удалить запись">
+	            </p>
+            </form>
+            <form action="/menu/requests/list" method="GET">
+                <p>
+	                <input type="submit" value="Перейти к запросам на правку">
+	            </p>
+            </form>
+            <form action="/list" method="GET">
+                <p>
+	                <input type="submit" value="Перейти к спискам">
+	            </p>
+            </form>
+            <form action="/" method="GET">
+                <p>
+	                <input type="submit" value="На главную">
+	            </p>
+            </form>
         </div>
     </div>
 </div>

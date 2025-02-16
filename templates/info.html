@@ -1,41 +1,19 @@
 <html>
-<head>
+<head>  
 <meta charset="UTF-8">
-<title>Меню</title>
+<title>Информация</title>
 <style type="text/css" media="screen"><!--
-body
+body 
     {
     color: white;
     background-color: #003;
     margin: 0px
     }
 
-input[type="text"] {
-    padding: 10px 15px;
-    border: solid;
-    border-color: #191970;
-    font-family: Lucida console;
-    border-radius: 4px;
-    background-image: linear-gradient(to right, #57a0ee, #57a0ee);
-    color: white;
-    transition: background-color 0.25s;
-}
-
-input[type="password"] {
-    padding: 10px 15px;
-    border: solid;
-    border-color: #191970;
-    font-family: Lucida console;
-    border-radius: 4px;
-    background-image: linear-gradient(to right, #57a0ee, #57a0ee);
-    color: white;
-    transition: background-color 0.25s;
-}
-
 input[type="submit"] {
   padding: 10px 15px;
   border: solid;
-  border-color: #191970;
+  border-color: #000080;
   font-family: Lucida console;
   border-radius: 4px;
   background-image: linear-gradient(to right, #57a0ee, #355f7c);
@@ -47,11 +25,7 @@ input[type="submit"]:hover {
   border-radius: 7px;
 }
 
-#error {
-    color: red;
-}
-
-#horizon
+#horizon        
     {
     color: white;
     background-color: transparent;
@@ -72,25 +46,32 @@ input[type="submit"]:hover {
     background-color: transparent;
     margin-left: -300px;
     position: absolute;
-    top: -35px;
+    top: -70px;
     left: 50%;
     width: 550px;
     height: 70px;
     visibility: visible
     }
 
-.bodytext
+.bodytext 
     {
     font-size: 14px
     }
 
-.headline
+.headline 
     {
     font-weight: bold;
     font-size: 24px
     }
-
-#footer
+.underline
+    {
+    font-size: 14px
+    }
+.default_text
+    {
+    text-align: left;
+    }
+#footer 
     {
     font-size: 20px;
     font-family: Calibri;
@@ -103,7 +84,7 @@ input[type="submit"]:hover {
     visibility: visible;
     display: block
     }
-
+}
 
 --></style>
 </head>
@@ -111,30 +92,28 @@ input[type="submit"]:hover {
 <div id="horizon">
     <div id="content">
         <div class="bodytext">
-            <span class="headline">Меню</span>
+            <span class="headline">{{ fio }}</span>
+            <p><span class="underline">{{ year }}</span></p>
+            <p><span class="underline">{{ war }}</span></p>
         </div>
-        <form action="/requests/new" method="GET">
-                <p>
-	                <input type="submit" value="Новый запрос">
-	            </p>
-            </form>
-        <form action="/requests/remove" method="GET">
-                <p>
-	                <input type="submit" value="Удалить запись">
-	            </p>
-            </form>
-        <form action="/list" method="GET">
-                <p>
-	                <input type="submit" value="Перейти к спискам">
-	            </p>
-            </form>
+        <div class="default_text">
+            {{ info }}<br>
+            <br>Район: {{ raion }}
+            <br>Награды: {{ nagrads }}
+        </div>
         <form action="/" method="GET">
                 <p>
 	                <input type="submit" value="На главную">
 	            </p>
             </form>
+            <form action="/list" method="GET">
+                <p>
+	                <input type="submit" value="К списку">
+	            </p>
+            </form>
     </div>
 </div>
+
 <div id="footer">
     <a>Электронная книга памяти Оренбургской области</a></div>
 </body>
